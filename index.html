@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Nature | Living Aquatic Ecosystems</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1a1a1a;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a0;
+            --accent: #c2b280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+.logo-img {
+            height: 150px; /* You can increase or decrease this to change the logo size */
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        main {
+            flex: 1;
+            padding: 4rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        /* Image Showcase Section */
+        .image-showcase {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .showcase-img {
+            flex: 1;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border: 1px solid #222;
+            background-color: var(--card-bg);
+        }
+
+        /* Extensive Text Content Section */
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .text-block {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+            color: var(--accent);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.5px;
+            color: var(--text-main);
+        }
+
+        .content-section p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Bio & Button Integration */
+        .closing-section {
+            text-align: center;
+            border-top: 1px solid #222;
+            padding-top: 4rem;
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .bio {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--text-main);
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--text-main);
+            color: var(--bg-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid #222;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .image-showcase { flex-direction: column; gap: 1rem; }
+            .text-block { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+<a href="index.html" class="logo-container">
+            <img src="images/logo.png" alt="Interior Nature" class="logo-img">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Living aquatic ecosystems for modern spaces</h1>
+        </section>
+
+        <!-- Updated Image Showcase Section -->
+<!--         <section class="image-showcase">
+            <img src="images/1.jpg" alt="Custom Planted Aquarium" class="showcase-img">
+            <img src="images/2.jpg" alt="Custom Paludarium / Terrarium" class="showcase-img">
+        </section> -->
+
+        <section class="content-section">
+            <div class="text-block">
+                <h2>Interior Nature exists to bring people closer to the living world.</h2>
+                <p>In a time when much of life happens behind screens and within four walls, we create aquariums, terrariums, and living systems that restore a sense of connection, wonder, and calm. Each piece is designed to be more than decoration — a small ecosystem that changes, grows, and invites people to slow down and pay attention.</p>
+            </div>
+
+            <div class="text-block">
+                <h2>Bespoke Aquarium Design: The Process</h2>
+                <h3>Conceptualization & Visualization</h3>
+                <p>Whether it’s a planted aquarium in a workplace, a terrarium on a desk, or a custom installation for a commercial space, our goal is simple: to create beautiful living environments that help nature feel a little closer to home.</p>
+    
+            </div>
+
+        </section>
+
+        <section class="closing-section">
+<!--             <p class="bio">
+                Crafting custom fish tanks, terrariums, and living natural art pieces tailored to architectural environments.
+            </p>
+ -->            <a href="contact.html" class="btn">Get in Touch</a>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Interior Nature. All rights reserved.
+    </footer>
+
+</body>
+</html>
