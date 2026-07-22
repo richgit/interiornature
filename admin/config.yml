@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: richgit/interiornature
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/home.json"
+        label: "Home Page Content"
+        name: "home"
+        fields:
+          - { label: "Main Headline", name: "headline", widget: "string" }
