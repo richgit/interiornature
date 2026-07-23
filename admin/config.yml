@@ -2,7 +2,8 @@ backend:
   name: github
   repo: richgit/interiornature
   branch: main
-base_url: https://sveltia-cms-auth.richardjware.workers.dev/
+  base_url: https://sveltia-cms-auth.richardjware.workers.dev/
+
 media_folder: "images"
 public_folder: "/images"
 
