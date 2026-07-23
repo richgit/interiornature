@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import homeData from '../../content/home/home.json';
+import { marked } from 'marked';
+
+// Convert the markdown string in homeData.body into actual HTML
+const parsedBody = marked.parse(homeData.body);
 ---
 
 <Layout title="Interior Nature | Living Aquatic Ecosystems">
@@ -16,7 +20,7 @@ import homeData from '../../content/home/home.json';
 
     <section class="content-section">
         <div class="text-block">
-            <Fragment set:html={homeData.body} />
+            <Fragment set:html={parsedBody} />
         </div>
     </section>
 
