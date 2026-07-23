@@ -18,8 +18,8 @@ collections:
           - { label: "Main Headline", name: "headline", widget: "string" }
           - { label: "Header Image", name: "headerImage", widget: "image", required: false }
           - { label: "Introductory Paragraph", name: "intro", widget: "text" }
-          - { label: "Process Section Title", name: "processTitle", widget: "string", required: false }
-          - { label: "Process Text", name: "processText", widget: "text", required: false }
+          - { label: "Main Section Title", name: "processTitle", widget: "string", required: false }
+          - { label: "Main Text", name: "processText", widget: "text", required: false }
 
   - name: "pages"
     label: "Website Pages (Menu)"
