@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import homeData from '../content/home/home.json';
+import homeData from '../../content/home/home.json';
 ---
 
 <Layout title="Interior Nature | Living Aquatic Ecosystems">
@@ -16,16 +16,8 @@ import homeData from '../content/home/home.json';
 
     <section class="content-section">
         <div class="text-block">
-            <h2>Interior Nature exists to bring people closer to the living world.</h2>
-            <p>{homeData.intro}</p>
+            <Fragment set:html={homeData.body} />
         </div>
-
-        {homeData.processTitle && (
-            <div class="text-block">
-                <h2>{homeData.processTitle}</h2>
-                <p>{homeData.processText}</p>
-            </div>
-        )}
     </section>
 
     <section class="closing-section">
