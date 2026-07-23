@@ -15,11 +15,11 @@ collections:
         label: "Home Content"
         name: "home"
         fields:
-          - { label: "Main Headline", name: "headline", widget: "string" }
+          - { label: "Headline", name: "headline", widget: "string" }
           - { label: "Header Image", name: "headerImage", widget: "image", required: false }
           - { label: "Introductory Paragraph", name: "intro", widget: "text" }
-          - { label: "Main Section Title", name: "processTitle", widget: "string", required: false }
-          - { label: "Main Text", name: "processText", widget: "text", required: false }
+          - { label: "Section Title", name: "processTitle", widget: "string", required: false }
+          - { label: "Section Text", name: "processText", widget: "text", required: false }
 
   - name: "pages"
     label: "Website Pages (Menu)"
