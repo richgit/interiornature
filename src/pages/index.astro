@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import homeData from '../content/home/home.json';
+---
+
+<Layout title="Interior Nature | Living Aquatic Ecosystems">
+    <section class="hero-section">
+        <h1>{homeData.headline}</h1>
+    </section>
+
+    <section class="content-section">
+        <div class="text-block">
+            <h2>Interior Nature exists to bring people closer to the living world.</h2>
+            <p>{homeData.intro}</p>
+        </div>
+
+        {homeData.processTitle && (
+            <div class="text-block">
+                <h2>{homeData.processTitle}</h2>
+                <p>{homeData.processText}</p>
+            </div>
+        )}
+    </section>
+
+    <section class="closing-section">
+        <a href="/contact" class="btn">Get in Touch</a>
+    </section>
+</Layout>

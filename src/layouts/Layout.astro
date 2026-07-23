@@ -1,0 +1,250 @@
+---
+import { getCollection } from 'astro:content';
+
+const { title = "Interior Nature | Living Aquatic Ecosystems" } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+// Fetch all CMS pages and sort them by menuOrder
+const allPages = await getCollection('pages');
+const menuPages = allPages
+  .filter(page => page.data.showInMenu)
+  .sort((a, b) => (a.data.menuOrder || 10) - (b.data.menuOrder || 10));
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <style is:global>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1a1a1a;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a0;
+            --accent: #c2b280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 150px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        main {
+            flex: 1;
+            padding: 4rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .text-block {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+            color: var(--accent);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.5px;
+            color: var(--text-main);
+        }
+
+        p, .text-block p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Contact Card Styles */
+        .contact-card {
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border: 1px solid #222;
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        .contact-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .value {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        a.value:hover {
+            color: var(--accent);
+        }
+
+        .closing-section {
+            text-align: center;
+            border-top: 1px solid #222;
+            padding-top: 4rem;
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--text-main);
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--text-main);
+            color: var(--bg-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid #222;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .text-block { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo-container">
+            <img src="/images/logo.png" alt="Interior Nature" class="logo-img">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="/" class={currentPath === "/" ? "active" : ""}>Home</a></li>
+                {menuPages.map(page => (
+                    <li>
+                        <a
+                          href={`/${page.slug}`}
+                          class={currentPath.includes(page.slug) ? "active" : ""}
+                        >
+                          {page.data.title}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <slot />
+    </main>
+
+    <footer>
+        &copy; 2026 Interior Nature. All rights reserved.
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: richgit/interiornature
+  branch: main
+  base_url: https://sveltia-cms-auth.richardjware.workers.dev
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "home"
+    label: "Home Page"
+    files:
+      - file: "src/content/home/home.json"
+        label: "Home Content"
+        name: "home"
+        fields:
+          - { label: "Main Headline", name: "headline", widget: "string" }
+          - { label: "Introductory Paragraph", name: "intro", widget: "text" }
+          - { label: "Process Section Title", name: "processTitle", widget: "string", required: false }
+          - { label: "Process Text", name: "processText", widget: "text", required: false }
+
+  - name: "pages"
+    label: "Website Pages (Menu)"
+    folder: "src/content/pages"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Menu Title (e.g. Contact, Workshops)", name: "title", widget: "string" }
+      - { label: "Page Headline", name: "headline", widget: "string", required: false }
+      - { label: "Show in Menu?", name: "showInMenu", widget: "boolean", default: true }
+      - { label: "Menu Order (1 = Leftmost)", name: "menuOrder", widget: "number", default: 10 }
+      - { label: "Is this a Contact Page?", name: "isContactCard", widget: "boolean", default: false }
+      - { label: "Phone Number (If contact page)", name: "phone", widget: "string", required: false }
+      - { label: "Email Address (If contact page)", name: "email", widget: "string", required: false }
+      - { label: "Page Content", name: "body", widget: "markdown", required: false }
