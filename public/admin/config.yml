@@ -11,7 +11,7 @@ collections:
   - name: "home"
     label: "Home Page"
     files:
-      - file: "src/content/home/home.json"
+      - file: "content/home/home.json"
         label: "Home Content"
         name: "home"
         fields:
@@ -20,18 +20,31 @@ collections:
           - { label: "Main Body Content", name: "body", widget: "richtext" }
 
   - name: "pages"
-    label: "Website Pages (Menu)"
+    label: "Website Pages"
     folder: "src/content/pages"
     create: true
     delete: true
     slug: "{{slug}}"
     fields:
-      - { label: "Menu Title", name: "title", widget: "string" }
+      - { label: "Page Title", name: "title", widget: "string" }
       - { label: "Page Headline", name: "headline", widget: "string", required: false }
       - { label: "Header Image", name: "headerImage", widget: "image", required: false }
       - { label: "Show in Menu?", name: "showInMenu", widget: "boolean", default: true }
       - { label: "Menu Order", name: "menuOrder", widget: "number", default: 10 }
-      - { label: "Is this a Contact Page?", name: "isContactCard", widget: "boolean", default: false }
-      - { label: "Phone Number", name: "phone", widget: "string", required: false }
-      - { label: "Email Address", name: "email", widget: "string", required: false }
-      - { label: "Page Content", name: "body", widget: "markdown", required: false }
+      - { label: "Page Content", name: "body", widget: "richtext", required: false }
+
+  - name: "contact_page"
+    label: "Contact Page"
+    files:
+      - file: "src/content/pages/contact.md"
+        label: "Edit Contact Page"
+        name: "contact"
+        fields:
+          - { label: "Menu Title", name: "title", widget: "string", default: "Contact" }
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Header Image", name: "headerImage", widget: "image", required: false }
+          - { label: "Show in Menu?", name: "showInMenu", widget: "boolean", default: true }
+          - { label: "Menu Order", name: "menuOrder", widget: "number", default: 100 }
+          - { label: "Phone Number", name: "phone", widget: "string" }
+          - { label: "Email Address", name: "email", widget: "string" }
+          - { label: "Introductory Text", name: "body", widget: "richtext", required: false }
