@@ -1,12 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import homeData from '../content/home/home.json';
+import homeData from '../../content/home/home.json';
 ---
 
 <Layout title="Interior Nature | Living Aquatic Ecosystems">
     <section class="hero-section">
         <h1>{homeData.headline}</h1>
     </section>
+
+    {homeData.headerImage && (
+        <div class="featured-image-container">
+            <img src={homeData.headerImage} alt="Interior Nature" class="featured-image" />
+        </div>
+    )}
 
     <section class="content-section">
         <div class="text-block">

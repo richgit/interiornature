@@ -11,11 +11,12 @@ collections:
   - name: "home"
     label: "Home Page"
     files:
-      - file: "src/content/home/home.json"
+      - file: "content/home/home.json"
         label: "Home Content"
         name: "home"
         fields:
           - { label: "Main Headline", name: "headline", widget: "string" }
+          - { label: "Header Image", name: "headerImage", widget: "image", required: false }
           - { label: "Introductory Paragraph", name: "intro", widget: "text" }
           - { label: "Process Section Title", name: "processTitle", widget: "string", required: false }
           - { label: "Process Text", name: "processText", widget: "text", required: false }
@@ -27,11 +28,12 @@ collections:
     delete: true
     slug: "{{slug}}"
     fields:
-      - { label: "Menu Title (e.g. Contact, Workshops)", name: "title", widget: "string" }
+      - { label: "Menu Title", name: "title", widget: "string" }
       - { label: "Page Headline", name: "headline", widget: "string", required: false }
+      - { label: "Header Image", name: "headerImage", widget: "image", required: false }
       - { label: "Show in Menu?", name: "showInMenu", widget: "boolean", default: true }
-      - { label: "Menu Order (1 = Leftmost)", name: "menuOrder", widget: "number", default: 10 }
+      - { label: "Menu Order", name: "menuOrder", widget: "number", default: 10 }
       - { label: "Is this a Contact Page?", name: "isContactCard", widget: "boolean", default: false }
-      - { label: "Phone Number (If contact page)", name: "phone", widget: "string", required: false }
-      - { label: "Email Address (If contact page)", name: "email", widget: "string", required: false }
+      - { label: "Phone Number", name: "phone", widget: "string", required: false }
+      - { label: "Email Address", name: "email", widget: "string", required: false }
       - { label: "Page Content", name: "body", widget: "markdown", required: false }

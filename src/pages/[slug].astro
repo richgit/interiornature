@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { page } = Astro.props;
 const { Content } = await page.render();
-const { title, headline, isContactCard, phone, email } = page.data;
+const { title, headline, headerImage, isContactCard, phone, email } = page.data;
 ---
 
 <Layout title={`${title} | Interior Nature`}>
@@ -20,8 +20,14 @@ const { title, headline, isContactCard, phone, email } = page.data;
         <h1>{headline || title}</h1>
     </section>
 
+    {headerImage && (
+        <div class="featured-image-container">
+            <img src={headerImage} alt={title} class="featured-image" />
+        </div>
+    )}
+
     <section class="content-section">
-        {isContactCard ? (
+        {isContactCard && (
             <div class="contact-card">
                 {phone && (
                     <div class="contact-item">
@@ -37,7 +43,7 @@ const { title, headline, isContactCard, phone, email } = page.data;
                     </div>
                 )}
             </div>
-        ) : null}
+        )}
 
         <div class="text-block">
             <Content />
