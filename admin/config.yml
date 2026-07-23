@@ -2,7 +2,7 @@ backend:
   name: github
   repo: richgit/interiornature
   branch: main
-
+base_url: https://sveltia-cms-auth.richardjware.workers.dev/
 media_folder: "images"
 public_folder: "/images"
 
@@ -15,3 +15,4 @@ collections:
         name: "home"
         fields:
           - { label: "Main Headline", name: "headline", widget: "string" }
+
